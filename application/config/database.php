@@ -75,10 +75,13 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+//	 php와 database가 서로 다른 머신에 있다면 그 머신의 호스트나 아이피를 연결해야
 	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+//	 mysql접속할때 썻던 아이디랑 비밀번호 적어야함!
+	'username' => 'root',
+	'password' => '123456',
+//	create database 로 생성한 데이터베이스
+	'database' => 'opentutorials',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
