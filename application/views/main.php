@@ -6,7 +6,7 @@
     // 이 topics는 controller/topic.php에 있는 $this->load->view('main', array('topics'=>$data)); 의 topics임
     // (= controller가 전달한 데이터를 view가 잘 받았다!)
 //        var_dump($topics);
-      foreach ($topics as $entry){
+    foreach ($topics as $entry){
     ?>
           <li>
               <a href="/index.php/topic/get/<?=$entry->id?>">

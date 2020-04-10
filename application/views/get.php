@@ -1,3 +1,6 @@
-
-<!--    '토픽'.$id 로 하니까 .$id가 그대로 보여서(html형식이라) php형식으로 바꿈 근데 이러면 뭘 id값으로 받아야하는지 몰라서 오류남   -->
-        토픽 <?=$id?>
+<article>
+    <h1><?=$topic->title?></h1>
+    <div>
+        <?=$topic->description?>
+    </div>
+</article>

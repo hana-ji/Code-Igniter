@@ -14,9 +14,15 @@ class Topic extends CI_Controller {
         $this->load->view('footer');
     }
     function get($id){
+//      가장 먼저 데이터베이스 로드
+        $this->load->database();
+//      데이터베이스에서 모델을 사용할거기때문에
+        $this->load->model('topic_model');
+//      토픽이라는 변수에 get이라는 메소드를 호출해서 토픽 데이터가 담기면 됨
+        $topic = $this->topic_model->get($id);
         $this->load->view('head');
-        $data = array('id'=>$id);
-        $this->load->view('get', $data);
+//        변수 $topic = topic_model의 get 메소드로 호출해서 가져온 값
+        $this->load->view('get', array('topic'=>$topic));
         $this->load->view('footer');
     }
 }
