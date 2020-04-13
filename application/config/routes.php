@@ -49,6 +49,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
-$route['404_override'] = '';
+$route['topic/(:num)'] = "topic/get/$1";
+$route['post/(:num)'] = "topic/get/$1";
+$route['topic/([a-z]+)/([a-z]+)/(\d+)'] = "$1/$2/$3";
+// 사용자가 아무것도 적지않고 접속햇을 때 기본 화면 보여주는 곳
+$route['default_controller'] = 'topic/index';
+// 사용자가 존재하지않는 페이지에 접속했을
+$route['404_override'] = 'errors/notfound';
 $route['translate_uri_dashes'] = FALSE;
